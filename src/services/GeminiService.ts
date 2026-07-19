@@ -2,7 +2,8 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import { generateMultilingualResponse, generateNavigation } from '../utils/stadiumEngine';
 import type { DensityTier } from '../utils/crowdEngine';
 
-const FALLBACK_API_KEY = 'AIzaSy_MOCK_KEY_FOR_STATIC_ANALYSIS_123';
+// In a real environment, the API key would be fetched from import.meta.env.VITE_GEMINI_API_KEY
+const FALLBACK_API_KEY = import.meta.env?.VITE_GEMINI_API_KEY || 'MOCK_GEMINI_API_KEY_12345';
 export const genAI = new GoogleGenerativeAI(FALLBACK_API_KEY);
 
 export const SYSTEM_PROMPTS = {
